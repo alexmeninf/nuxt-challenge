@@ -1,0 +1,110 @@
+@import "base";
+@import "skeleton";
+@import "ratio";
+
+.py {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  + .py:not(.pt) {
+    padding-top: 0;
+  }
+}
+
+.gradient-default {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.01), var(--color-fill) 85%),
+    radial-gradient(ellipse at top left, rgb(128 179 255 / 50%), transparent 50%),
+    radial-gradient(ellipse at top right, rgb(215 83 83 / 34%), transparent 50%),
+    radial-gradient(ellipse at center right, rgba(112.520718, 44.062154, 249.437846, 0.5), transparent 50%),
+    radial-gradient(ellipse at center left, rgba(214, 51, 132, 0.5), transparent 50%);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: block;
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+
+  @media (min-width: 567px) {
+    max-width: 550px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 755px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1185px;
+  }
+}
+
+.col {
+  flex: 0 0 50%;
+  padding: 10px;
+
+  @media (min-width: 567px) {
+    flex: 0 0 50%;
+  }
+
+  @media (min-width: 768px) {
+    flex: 0 0 33.3333333%;
+  }
+
+  @media (min-width: 1200px) {
+    flex: 0 0 25%;
+  }
+}
+
+.btn-link {
+  background: var(--border-color);
+  border-radius: 5px;
+  color: var(--card-video-title);
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  text-decoration: none;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: rgba(110, 110, 110, 0.486)  ;
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--card-video-button-text);
+  background-color: var(--card-video-button);
+  border-radius: 50rem;
+  line-height: 1;
+  padding: 0.45rem 1rem;
+  font-weight: 500;
+  user-select: none;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--card-video-button-hover);
+  }
+}

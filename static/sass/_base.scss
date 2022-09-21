@@ -1,0 +1,124 @@
+body {
+  --color-theme: #185bd8;
+  --color-fill: #fff;
+  --color-fill-secondary: #bbbbbb;
+  --color-fill-contrast: #f1f1f1;
+  --card-video-bg: rgb(239 239 239 / 80%);
+  --card-video-title: #28283a;
+  --card-video-button: #2654eb;
+  --card-video-button-hover: #1334a1;
+  --card-video-button-text: #ffffff;
+  --color-headline: #1b1b1b;
+  --color-text: #2b2a2a;
+  --border-color: #{rgba(#000, 0.1)};
+  --border-radius: 1.2rem;
+}
+
+@mixin variables-dark-mode {
+  --color-theme: #4b8aff;
+  --color-fill: rgb(17, 17, 17);
+  --color-fill-secondary: #222224;
+  --color-fill-contrast: #686868;
+  --card-video-bg: rgb(59 59 76 / 80%);
+  --card-video-title: #e7e7e7;
+  --card-video-button: #2654eb;
+  --card-video-button-hover: #1334a1;
+  --card-video-button-text: #ffffff;
+  --color-headline: #ffffff;
+  --color-text: #d3d3d3;
+  --border-color: #{rgba(#fff, 0.1)};
+}
+
+@media screen {
+  body.darkMode {
+    @include variables-dark-mode;
+  }
+}
+
+/* mode auto */
+@media screen and (prefers-color-scheme: dark) {
+  body.darkAuto {
+    @include variables-dark-mode;
+  }
+}
+
+body {
+  color-scheme: light dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-fill-secondary);
+  border-radius: 8px;
+  border: 2px solid var(--color-fill-contrast);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--color-fill-contrast);
+  width: 14px;
+  height: 14px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-headline);
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+a {
+  color: var(--color-theme);
+}
+
+body {
+  background-color: var(--color-fill);
+  color: var(--color-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+footer {
+  color: var(--color-text);
+  padding: 50px 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+
+  nav {
+    margin-bottom: 15px;
+
+    > a {
+      margin: 0 5px;
+      display: inline-block;
+      line-height: 1;
+      color: var(--color-text);
+      padding: 5px;
+
+      &:not(:hover) {
+        text-decoration: none;
+      }
+
+      &:not(:last-child) {
+        padding: 5px 10px 5px 5px;
+        border-right: 1px solid var(--color-fill-contrast);
+      }
+    }
+  }
+}
+
+.default-section {
+  min-height: 80vh;
+}
